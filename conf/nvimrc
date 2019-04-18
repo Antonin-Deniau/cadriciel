@@ -1,0 +1,65 @@
+set ffs=unix
+set encoding=utf-8
+set fileencoding=utf-8
+
+" Plugins
+call plug#begin('~/.local/share/nvim/plugged')
+"
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'mhinz/vim-signify'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'majutsushi/tagbar'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'leafgarland/typescript-vim'
+
+call plug#end()
+
+" Nert tree
+map <c-t> :NERDTreeToggle<cr>
+autocmd VimEnter * NERDTree
+
+" Tabs manage
+nnoremap <silent> <tab> :bn<CR>
+nnoremap <silent> <S-tab> :bp<CR>
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" Ctrl p
+let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|tags|vendor|public|storage)$'
+
+" Convenient
+set number
+set mouse=a
+
+" Tag
+nmap <F8> :TagbarToggle<CR>
+function UpdateTags()
+	!eval 'ctags -R -o newtags; mv newtags tags' &
+endfunction
+nmap <silent> <F4> <Esc>:call UpdateTags()<CR>
+
+" Colorshemes
+
+" Whitespace
+let g:HLSpace = 1
+set listchars=tab:>·,trail:~,extends:>,precedes:<,space:␣,eol:¬,nbsp:·
+set showbreak=↪\ 
+
+function ToggleSpaceUnderscoring()
+	if g:HLSpace
+		set list
+	else
+		set nolist
+	endif
+
+	let g:HLSpace = !g:HLSpace
+endfunction
+
+nmap <silent> <F3> <Esc>:call ToggleSpaceUnderscoring()<CR>
+
