@@ -11,7 +11,7 @@ git clone https://github.com/Antonin-Deniau/cadriciel ~/cadriciel
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 # init config files
-cp ~/cadriciel/confmountpoints.conf.sample ~/cadriciel/confmountpoints.conf
+cp ~/cadriciel/conf/mountpoints.conf.sample ~/cadriciel/conf/mountpoints.conf
 ln -s ~/cadriciel/conf/editorconfig ~/.editorconfig
 
-echo "source ~/.cadriciel/cadriciel.zsh" >> ~/.zshrc
+echo "source ~/cadriciel/cadriciel.zsh" >> ~/.zshrc
