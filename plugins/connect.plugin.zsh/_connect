@@ -1,0 +1,11 @@
+#compdef connect
+_connect() {
+		local state
+
+	_arguments \
+	'1: :->dir'
+
+	case $state in
+		(dir) _arguments '1:connect:($(ls ~/.connect))' ;;
+	esac
+}

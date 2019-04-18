@@ -1,0 +1,11 @@
+#compdef rmconnect
+_rmconnect() {
+		local state
+
+	_arguments \
+	'1: :->dir'
+
+	case $state in
+		(dir) _arguments '1:rmconnect:($(ls ~/.connect))' ;;
+	esac
+}
