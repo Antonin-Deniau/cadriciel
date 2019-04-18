@@ -216,13 +216,14 @@ unsetopt hist_ignore_space               # n'ignore pas les espaces dans l'his.
 # 5. Complétion des options des commandes
 #
 
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
 zstyle ':completion:*' max-errors 3 numeric
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' menu select
 zstyle ":completion:*:commands" rehash 1 # Ne pas utiliser le cache
-
-
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+autoload -Uz compinit
+compinit
 
 ########
 # ENVS #
