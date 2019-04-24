@@ -3,12 +3,16 @@ if ! [ -x "$(command -v git)" ]; then
     echo 'Error: git is not installed.' >&2
     exit 1
 fi
-
-# Download the framework
-git clone https://github.com/Antonin-Deniau/cadriciel ~/cadriciel
+if ! [ -x "$(command -v curl)" ]; then
+    echo 'Error: git is not installed.' >&2
+    exit 1
+fi
 
 # init zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+# Init tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # init vimpluged
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -17,11 +21,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # init config files
 cp ~/cadriciel/conf/mountpoints.conf.sample ~/cadriciel/conf/mountpoints.conf
 
-ln -s ~/cadriciel/conf/editorconfig ~/.editorconfig
-
 mkdir -p ~/.config/nvim/ 
 ln -s ~/cadriciel/conf/nvimrc ~/.config/nvim/init.vim
-
+ln -s ~/cadriciel/conf/tmux.conf ~/.tmux.conf
+ln -s ~/cadriciel/conf/editorconfig ~/.editorconfig
 
 # Source
 echo "source ~/cadriciel/cadriciel.zsh" >> ~/.zshrc
