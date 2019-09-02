@@ -22,7 +22,6 @@ call plug#end()
 
 " Nert tree
 map <c-t> :NERDTreeToggle<cr>
-autocmd VimEnter * NERDTree
 
 " Tabs manage
 nnoremap <silent> <tab> :bn<CR>
