@@ -62,3 +62,4 @@ endfunction
 
 nmap <silent> <F3> <Esc>:call ToggleSpaceUnderscoring()<CR>
 
+let g:vim_markdown_folding_disabled = 1
