@@ -25,9 +25,9 @@ ARCHITECTURE
 USEFULL TOOLS TO ADD
 --------------------
 
-- jq     # Parse and query json from the cli
-- ag/rg  # Fast find/grep from the cli
-- up     # Interactive pipe
-- pyenv  # Manage python versions
-- nvm    # Manage node versions
+- jq     # Parse and query json from the cli
+- ag/rg  # Fast find/grep from the cli
+- up     # Interactive pipe
+- pyenv  # Manage python versions
+- nvm    # Manage node versions
 
