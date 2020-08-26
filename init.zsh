@@ -25,6 +25,7 @@ mkdir -p ~/.config/nvim/
 ln -s ~/cadriciel/conf/nvimrc ~/.config/nvim/init.vim
 ln -s ~/cadriciel/conf/tmux.conf ~/.tmux.conf
 ln -s ~/cadriciel/conf/editorconfig ~/.editorconfig
+ln -s ~/cadriciel/conf/gitconfig ~/.gitconfig
 
 # Source
 echo "source ~/cadriciel/cadriciel.zsh" >> ~/.zshrc

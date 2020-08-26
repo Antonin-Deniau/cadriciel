@@ -1,0 +1,6 @@
+[alias]
+	glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+	list-branch = for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes
+
+[include]
+    path = ~/.gitconfig_personal
