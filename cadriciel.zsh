@@ -215,8 +215,12 @@ export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export LESSOPEN='|lesspipe %s'
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 ########
 # PATH #
 ########
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/.bin:$PATH"
+
